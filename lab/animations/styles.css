@@ -1,0 +1,43 @@
+body {
+    background: #aaa;
+    font-family: sans-serif;
+}
+
+.news-slider {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.news-slider li button {
+    min-width: 5em;
+}
+
+.news-container {
+    margin: auto;
+    width: 70%;
+    max-width: 960px;
+}
+
+.news-list {
+    margin: 0;
+    padding: 0;
+    border: 1px solid #66a;
+    background: #ccc;
+}
+
+.news-item {
+    border: 2px solid #444;
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    min-height: 30px;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.news-item-hidden {
+    display: none;
+}
