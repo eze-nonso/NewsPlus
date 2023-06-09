@@ -4,6 +4,7 @@
   <mat-slide-toggle></mat-slide-toggle>
 </mat-toolbar>
 <div class="content">
+  <happy-slider></happy-slider>
   <div class="spinner" *ngIf="(data.loading$ | async) else content;"></div>
   <ng-template #content>
     <app-news-card

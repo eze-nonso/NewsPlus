@@ -9,11 +9,13 @@ import {NgOptimizedImage} from "@angular/common";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {HttpClientModule} from "@angular/common/http";
+import { HappySliderComponent } from './happy-slider/happy-slider';
+import { NgxSliderModule } from 'ngx-slider-v2';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NewsCardComponent
+    NewsCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,6 +25,8 @@ import {HttpClientModule} from "@angular/common/http";
     FlexLayoutModule,
     MatToolbarModule,
     HttpClientModule,
+    HappySliderComponent,
+    NgxSliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
