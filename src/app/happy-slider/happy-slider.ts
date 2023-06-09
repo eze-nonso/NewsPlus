@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import { ChangeContext, Options, LabelType, NgxSliderModule } from 'ngx-slider-v2';
 
 @Component({
@@ -10,16 +10,18 @@ import { ChangeContext, Options, LabelType, NgxSliderModule } from 'ngx-slider-v
 })
 
 export class HappySliderComponent {
-    @Input() emojindicator: number = 0;
+    emojindicator: number = 0;
     options: Options = {
-    floor: 0,
-    ceil: 400,
-    step: 100,
+    floor: -1,
+    ceil: 1,
+    step: .5,
     translate: (value: number, label: LabelType): string => '',
   };
   onUserChange(changeContext: ChangeContext): void {
     const { value } = changeContext;
-    console.log(value);
     this.emojindicator = value;
+    this.valueChange.next(value);
   }
+
+  @Output() valueChange = new EventEmitter<number>();
 }

@@ -12,6 +12,8 @@ import {HttpClientModule} from "@angular/common/http";
 import { HappySliderComponent } from './happy-slider/happy-slider';
 import { NgxSliderModule } from 'ngx-slider-v2';
 import {MatIconModule} from "@angular/material/icon";
+import {MatSliderModule} from "@angular/material/slider";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import {MatIconModule} from "@angular/material/icon";
     HappySliderComponent,
     NgxSliderModule,
     MatIconModule,
+    MatSliderModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
