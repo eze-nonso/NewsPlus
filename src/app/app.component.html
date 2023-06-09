@@ -11,7 +11,7 @@
 </mat-toolbar>
 <div class="content" fxLayout="row wrap" [fxLayoutAlign]="(data.loading$ | async) ? 'center center' : 'start'" fxLayoutGap="16px">
   <div class="spinner" *ngIf="(data.loading$ | async) else content;">
-    <mat-spinner [strokeWidth]="5"></mat-spinner>
+    <happy-slider></happy-slider>
   </div>
   <ng-template #content>
     <div fxFlex.gt-sm="40%" fxFlex="100%" fxFlex.gt-md="30%" fxLayout

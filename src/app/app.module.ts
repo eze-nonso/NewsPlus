@@ -9,14 +9,14 @@ import {NgOptimizedImage} from "@angular/common";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {HttpClientModule} from "@angular/common/http";
-import {MatSliderModule} from "@angular/material/slider";
+import { HappySliderComponent } from './happy-slider/happy-slider';
+import { NgxSliderModule } from 'ngx-slider-v2';
 import {MatIconModule} from "@angular/material/icon";
-import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [
     AppComponent,
-    NewsCardComponent
+    NewsCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,10 +26,11 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
     FlexLayoutModule,
     MatToolbarModule,
     HttpClientModule,
-    MatSliderModule,
+    HappySliderComponent,
+    NgxSliderModule,
     MatIconModule,
-    MatProgressSpinnerModule,
   ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
