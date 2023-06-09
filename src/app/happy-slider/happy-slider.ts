@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Options, LabelType, NgxSliderModule } from 'ngx-slider-v2';
+import { ChangeContext, Options, LabelType, NgxSliderModule } from 'ngx-slider-v2';
 
 @Component({
   selector: 'happy-slider',
@@ -10,11 +10,16 @@ import { Options, LabelType, NgxSliderModule } from 'ngx-slider-v2';
 })
 
 export class HappySliderComponent {
-  @Input() emojindicator: string = 'Hello';
+    @Input() emojindicator: number = 0;
     options: Options = {
     floor: 0,
-    ceil: 500,
+    ceil: 400,
     step: 100,
-    translate: (value: number, label: LabelType): string => ''
+    translate: (value: number, label: LabelType): string => '',
   };
+  onUserChange(changeContext: ChangeContext): void {
+    const { value } = changeContext;
+    console.log(value);
+    this.emojindicator = value;
+  }
 }
