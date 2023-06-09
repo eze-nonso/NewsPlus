@@ -1,3 +1,6 @@
+@use '@angular/material' as mat;
+@import '../../../theme';
+
 img {
   width: 65px;
   height: 65px;
@@ -11,9 +14,27 @@ img {
 
 .description {
   display: inline;
-  font-family: CapitoliumHead,TimesNewRoman,Times New Roman,Times,Baskerville,Georgia,"serif";
+  font-family: 'Capitolium Headline 2','Times,Baskerville',Georgia,"serif";
   font-weight: 500;
   font-size: 16px;
   letter-spacing: 0;
   line-height: 18px;
+}
+
+.card {
+  position: relative;
+  &:hover {
+    .description {
+      text-decoration: underline solid mat.get-color-from-palette($mat-newsplus-primary,700);
+    }
+  }
+  a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }

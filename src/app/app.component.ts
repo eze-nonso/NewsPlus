@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {DataService} from "./services/data.service";
+import {DataService, Steps} from "./services/data.service";
 
 @Component({
   selector: 'app-root',
@@ -8,7 +8,10 @@ import {DataService} from "./services/data.service";
 })
 export class AppComponent {
   constructor(public data: DataService) {
-    this.data.getNews(1);
+    this.getNews();
+  }
+  public getNews(level?: number) {
+    this.data.getNews(level as Steps);
   }
   title = 'newsplus';
   newsList: {
