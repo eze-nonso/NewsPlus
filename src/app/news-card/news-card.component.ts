@@ -10,4 +10,5 @@ export class NewsCardComponent {
   @Input() alt: string = '';
   @Input() date: string = '';
   @Input() description: string = '';
+  @Input() link: string = '';
 }

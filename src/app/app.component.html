@@ -1,17 +1,28 @@
 <mat-toolbar>
-  <h1>News +</h1>
-  <span class="example-spacer"></span>
-  <mat-slide-toggle></mat-slide-toggle>
+  <mat-toolbar-row [ngStyle]="{'padding-top': '16px'}">
+    <h1 fxLayoutAlign="center" fxFlexFill>News +</h1>
+    <mat-icon color="accent">home</mat-icon>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <mat-slider discrete [ngStyle.gt-sm]="{'margin-left': 'auto'}" fxFlex.lt-md="100%" fxFlexAlign.gt-sm="end" fxFlex="35%" min="-1" max="1 " step="0.5">
+      <input (valueChange)="getNews($event)" matSliderThumb>
+    </mat-slider>
+  </mat-toolbar-row>
 </mat-toolbar>
-<div class="content">
-  <div class="spinner" *ngIf="(data.loading$ | async) else content;"></div>
+<div class="content" fxLayout="row wrap" [fxLayoutAlign]="(data.loading$ | async) ? 'center center' : 'start'" fxLayoutGap="16px">
+  <div class="spinner" *ngIf="(data.loading$ | async) else content;">
+    <mat-spinner [strokeWidth]="5"></mat-spinner>
+  </div>
   <ng-template #content>
-    <app-news-card
-      [description]="item.description"
-      [alt]="item.alt"
-      [src]="item.src"
-      [date]="item.date"
-      *ngFor="let item of newsList"
-    ></app-news-card>
+    <div fxFlex.gt-sm="40%" fxFlex="100%" fxFlex.gt-md="30%" fxLayout
+         *ngFor="let item of (data.news | async)">
+      <app-news-card
+        [description]="item.description"
+        [alt]="item.title"
+        [src]="item.thumbnail"
+        [date]="'12:00 PM'"
+        [link]="item.link"
+      ></app-news-card>
+    </div>
   </ng-template>
 </div>

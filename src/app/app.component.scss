@@ -1,7 +1,8 @@
 .content {
   padding: 0 16px;
+  min-height: calc(100vh - 112px);
   app-news-card {
-    padding: 16px 0 32px;
+    padding: 16px 0;
     border-bottom: 1px solid #eaeaea;
     display: block;
   }
@@ -9,4 +10,15 @@
 
 .example-spacer {
   flex: 1 1 auto;
+}
+
+mat-spinner {
+  width: 50px;
+  height: 50px;
+}
+
+mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }

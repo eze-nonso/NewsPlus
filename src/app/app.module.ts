@@ -9,6 +9,9 @@ import {NgOptimizedImage} from "@angular/common";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {HttpClientModule} from "@angular/common/http";
+import {MatSliderModule} from "@angular/material/slider";
+import {MatIconModule} from "@angular/material/icon";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [
@@ -23,8 +26,10 @@ import {HttpClientModule} from "@angular/common/http";
     FlexLayoutModule,
     MatToolbarModule,
     HttpClientModule,
+    MatSliderModule,
+    MatIconModule,
+    MatProgressSpinnerModule,
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
