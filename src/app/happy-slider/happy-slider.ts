@@ -21,7 +21,7 @@ export class HappySliderComponent {
     const { value } = changeContext;
     this.emojindicator = value;
     console.log((value / 400) - 0.5);//__RP
-    this.valueChange.next((value / 400) - 0.5);
+    this.valueChange.next((value / 200) - 1);
   }
 
   @Output() valueChange = new EventEmitter<number>();

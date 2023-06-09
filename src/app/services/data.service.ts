@@ -25,7 +25,7 @@ export class DataService {
     )
       .pipe(map(res => level === undefined
       ? res
-      : res.filter(item => item.score === level),
+      : res.filter(item => item.score >= level),
       ), map(res => res.filter(item => !!item.description)),
         delay(500),
         finalize(() => this._loading.next(false)))
