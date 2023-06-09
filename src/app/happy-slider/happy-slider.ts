@@ -12,15 +12,16 @@ import { ChangeContext, Options, LabelType, NgxSliderModule } from 'ngx-slider-v
 export class HappySliderComponent {
     emojindicator: number = 0;
     options: Options = {
-    floor: -1,
-    ceil: 1,
-    step: .5,
+    floor: 0,
+    ceil: 400,
+    step: 100,
     translate: (value: number, label: LabelType): string => '',
   };
   onUserChange(changeContext: ChangeContext): void {
     const { value } = changeContext;
     this.emojindicator = value;
-    this.valueChange.next(value);
+    console.log((value / 400) - 0.5);//__RP
+    this.valueChange.next((value / 400) - 0.5);
   }
 
   @Output() valueChange = new EventEmitter<number>();

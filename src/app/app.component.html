@@ -3,11 +3,13 @@
     <h1 fxLayoutAlign="center" fxFlexFill>News +</h1>
     <mat-icon color="accent">home</mat-icon>
   </mat-toolbar-row>
+  <mat-toolbar-row [ngStyle]="{'height': 'fit-content'}">
+    <happy-slider [ngStyle]="{'width': '100%'}" (valueChange)="getNews($event)"></happy-slider>
+  </mat-toolbar-row>
   <mat-toolbar-row>
 <!--    <mat-slider discrete [ngStyle.gt-sm]="{'margin-left': 'auto'}" fxFlex.lt-md="100%" fxFlexAlign.gt-sm="end" fxFlex="35%" min="-1" max="1 " step="0.5">-->
 <!--      <input (valueChange)="getNews($event)" matSliderThumb>-->
 <!--    </mat-slider>-->
-    <happy-slider (valueChange)="getNews($event)"></happy-slider>
   </mat-toolbar-row>
 </mat-toolbar>
 <div class="content" fxLayout="row wrap" [fxLayoutAlign]="(data.loading$ | async) ? 'center center' : 'start'" fxLayoutGap="16px">
